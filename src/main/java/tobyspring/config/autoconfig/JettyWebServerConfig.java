@@ -8,8 +8,8 @@ import tobyspring.config.MyAutoConfiguration;
 
 @MyAutoConfiguration
 public class JettyWebServerConfig {
-    @Bean
-    public ServletWebServerFactory tomcatServletWebServerFactory() {
+    @Bean("jettyWebServerFactory")
+    public ServletWebServerFactory ServletWebServerFactory() {
         return new JettyServletWebServerFactory();
     }
 }
