@@ -15,12 +15,16 @@ import tobyspring.config.MyAutoConfiguration;
 public class TomcatWebServerConfig {
     @Value("${contextPath}")
     String contextPath;
+    @Value("${port}")
+    int port;
     @Bean("tomcatWebServerFactory")
     @ConditionalOnMissingBean // 동일한 타입의 bean이 있는지 체크하고 없으면 사용하겠다는 의미(사용자 정보에 저장된 bean을 우선 처리)
     public ServletWebServerFactory ServletWebServerFactory() {
         TomcatServletWebServerFactory factory = new TomcatServletWebServerFactory();
-        System.out.println(this.contextPath );
+        
         factory.setContextPath(this.contextPath);
+        factory.setPort(this.port);
+
         return factory;
     }
 
