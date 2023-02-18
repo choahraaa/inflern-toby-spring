@@ -3,8 +3,7 @@ package tobyspring.config.autoconfig;
 import org.springframework.stereotype.Component;
 import tobyspring.config.MyConfigurationProperties;
 
-@Component
-@MyConfigurationProperties
+@MyConfigurationProperties(prefix = "server") //prefix : class에 나온 property들에 대한 name space(중복방지)
 public class ServerProperties {
 
     private String contextPath;
