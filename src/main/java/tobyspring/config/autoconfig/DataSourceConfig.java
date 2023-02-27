@@ -22,7 +22,7 @@ public class DataSourceConfig {
         dataSource.setUrl(properties.getUrl());
         dataSource.setUsername(properties.getUsername());
         dataSource.setPassword(properties.getPassword());
-        
+
         return dataSource;
     }
 }
